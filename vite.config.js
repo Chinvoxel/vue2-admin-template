@@ -1,13 +1,42 @@
 import path from 'path'
 import { defineConfig, loadEnv } from 'vite'
 import vue2 from '@vitejs/plugin-vue2'
+import viteCompression from 'vite-plugin-compression2'
+import visualizer from 'rollup-plugin-visualizer'
+import ViteRestart from 'vite-plugin-restart'
 
 export default ({ mode }) => {
   const env = loadEnv(mode, process.cwd())
 
   return defineConfig({
     base: env.VITE_APP_PUBLIC_PATH,
-    plugins: [vue2()],
+    plugins: [
+      vue2(),
+      // 修改这些文件会重启项目
+      ViteRestart({
+        cache: false,
+        restart: ['./vite.config.js', './babel.config.js', './jsconfig.json']
+      }),
+
+      // 压缩
+      viteCompression({
+        algorithm: 'gzip', // 压缩算法
+        threshold: 10240, // 体积大于阈值，则进行压缩，单位为b
+        deleteOriginFile: false, // 压缩后是否删除源文件
+        exclude: [
+          /\.(br)$/, // 排除已经使用 Brotli 压缩的文件
+          /\.(gz)$/, // 排除已经使用 Gzip 压缩的文件
+          /\.(png|jpe?g|gif|svg|ico)$/i // 排除图片格式文件
+        ]
+      }),
+
+      // 打包分析
+      visualizer({
+        open: true, // 构建完成后自动打开报告页面
+        gzipSize: true, // 显示 Gzip 压缩后的包大小
+        brotliSize: true // 显示 Brotli 压缩后的包大小
+      })
+    ],
 
     resolve: {
       alias: {
