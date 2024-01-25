@@ -1,3 +1,6 @@
 {
-  "recommendations": ["sdras.vue-vscode-snippets"]
+  "recommendations": [
+    "sdras.vue-vscode-snippets",
+    "stylelint.vscode-stylelint"
+  ]
 }

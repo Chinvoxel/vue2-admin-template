@@ -9,7 +9,8 @@ module.exports = {
   parserOptions: {
     parser: '@babel/eslint-parser',
     ecmaVersion: 'latest',
-    sourceType: 'module'
+    sourceType: 'module',
+    requireConfigFile: false
   },
 
   plugins: ['vue', 'vue-scoped-css', 'import'],

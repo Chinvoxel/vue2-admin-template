@@ -63,12 +63,10 @@ export default {
 
     return {
       banner,
-
       form: {
         phone: '',
         password: ''
       },
-
       rules: {
         phone: [{ validator: checkPhone, trigger: 'blur' }],
         password: [{ required: true, max: 20, message: '请输入密码', trigger: 'blur' }]
@@ -94,10 +92,12 @@ export default {
 <style lang="scss" scoped>
 .login-wrapper {
   @include flex(center);
+
   width: 100vw;
   height: 100vh;
   overflow-y: auto;
   background: #03a9f4;
+
   .login-card {
     width: 900px;
     height: 500px;
@@ -109,8 +109,8 @@ export default {
       width: 100%;
       height: 100%;
       padding: 0;
-      background-color: #e0edfd;
       overflow: hidden;
+      background-color: #e0edfd;
     }
 
     .img-login {
@@ -120,8 +120,8 @@ export default {
     .login-form {
       width: 40%;
       padding: 20px;
-      border-radius: 15px;
       background-color: #ffffff;
+      border-radius: 15px;
 
       .title {
         margin: 40px 0;
@@ -135,26 +135,28 @@ export default {
       :deep {
         .form-input {
           @include autofill(#f5f5f5);
+
           height: 36px;
-          border-radius: 6px;
           background: #f5f5f5;
+          border-radius: 6px;
 
           .el-input__prefix {
             @include flex(center);
+
             top: 9px;
             width: 23px;
             height: 23px;
-            padding: 4px 4px;
-            border-radius: 2px;
+            padding: 4px;
             background: #ffffff;
+            border-radius: 2px;
           }
 
           .el-input__inner {
             height: 100%;
             padding-left: 35px;
             background: inherit;
-            box-shadow: none;
             border: none;
+            box-shadow: none;
 
             &::placeholder {
               font-size: 14px;
@@ -164,12 +166,12 @@ export default {
       }
 
       .btn-group {
-        text-align: right;
         margin-top: 40px;
+        text-align: right;
 
         .btn-submit {
-          height: 36px;
           width: 100%;
+          height: 36px;
         }
       }
     }

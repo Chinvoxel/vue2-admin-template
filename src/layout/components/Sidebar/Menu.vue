@@ -99,31 +99,36 @@ export default {
 .custom-popper {
   .nest-menu.el-menu-item {
     color: $color-gray;
+
     /* 菜单图标样式 */
     .menu-icon {
-      font-size: 18px;
       margin-right: 16px;
+      font-size: 18px;
       color: $color-gray;
     }
+
     &.is-active {
       color: $color-blue;
+
       .menu-icon {
         color: $color-blue;
       }
     }
   }
 }
+
 .custom-menu-container {
   /* 菜单图标样式 */
   .menu-icon {
-    font-size: 18px;
     margin-right: 16px;
+    font-size: 18px;
     color: $color-gray;
   }
 
   /* 收缩菜单样式 */
   &.no-expand-menu-container {
     width: auto;
+
     .menu-icon {
       margin: 0;
     }
@@ -132,6 +137,7 @@ export default {
 
 .custom-menu-container.el-menu {
   border-right: none;
+
   :deep {
     .el-menu-item {
       display: flex;
@@ -139,15 +145,19 @@ export default {
       padding: 0 18px;
       color: $color-gray;
       background-color: $menuBg;
+
       &:hover {
         background-color: $menuHover !important;
       }
+
       &.is-active {
         color: $color-blue;
+
         .menu-icon {
           color: $color-blue;
         }
       }
+
       .el-menu-tooltip__trigger {
         padding: inherit;
       }
@@ -155,22 +165,27 @@ export default {
 
     .el-submenu {
       background-color: $color-dark;
+
       .el-submenu__title {
         display: flex;
         align-items: center;
         padding: 0 18px;
         color: $color-gray;
+
         &:hover {
           background-color: $menuHover !important;
         }
       }
+
       .el-submenu__icon-arrow {
         margin-top: -6px;
         color: #909399;
       }
+
       .nest-menu.el-menu-item {
         padding: 0 45px;
         background-color: $subMenuBg !important;
+
         &:hover {
           background-color: $subMenuHover !important;
         }

@@ -42,14 +42,14 @@ export default {
   transition: background 0.3s;
 
   &:hover {
-    background: rgba(0, 0, 0, 0.025);
+    background: rgb(0 0 0 / 2.5%);
   }
 
   .hamburger {
     display: inline-block;
-    vertical-align: middle;
     width: 20px;
     height: 20px;
+    vertical-align: middle;
   }
 
   .hamburger.is-active {

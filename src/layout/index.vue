@@ -29,13 +29,14 @@ export default {
 <style lang="scss" scoped>
 .app-container {
   .sidebar-container {
-    z-index: 1001;
     position: fixed;
     top: 0;
-    left: 0;
     bottom: 0;
+    left: 0;
+    z-index: 1001;
     transition: width 0.28s;
   }
+
   .main-container {
     position: fixed;
     top: 0;
