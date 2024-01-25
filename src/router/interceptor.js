@@ -30,7 +30,6 @@ router.beforeEach((to, from, next) => {
 
 router.afterEach(() => {
   NProgress.done()
-  console.log('router: ', router)
 })
 
 // 路由错误捕获

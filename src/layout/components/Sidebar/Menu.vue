@@ -21,7 +21,7 @@
 
       <!-- 渲染包含多子路由的菜单 -->
       <template v-else>
-        <el-sub-menu :key="route.path" :index="route.path" popper-class="custom-popper">
+        <el-submenu :key="route.path" :index="route.path" popper-class="custom-popper">
           <template #title>
             <i :class="`el-icon-${route.meta.icon}`" class="menu-icon"></i>
             <span>{{ route.meta.title }}</span>
@@ -35,7 +35,7 @@
             <i :class="`el-icon-${childRoute.meta.icon}`" class="menu-icon"></i>
             <template #title>{{ childRoute.meta.title }}</template>
           </el-menu-item>
-        </el-sub-menu>
+        </el-submenu>
       </template>
     </template>
   </el-menu>
@@ -60,6 +60,7 @@ export default {
 
   methods: {
     formatRoutes(routes, parentPath = '') {
+      // 过滤出非隐藏的路由
       return routes
         .filter(route => !route.hidden)
         .map(route => {
@@ -69,8 +70,8 @@ export default {
             children: route.children ? this.formatRoutes(route.children, route.path) : null
           }
 
-          if (formattedRoute.children && formattedRoute.children.length === 1) {
-            // 如果只有一个子路由，将子路由的属性合并到父级路由
+          // 如果没有title且只有一个子路由，将子路由的属性合并到父级路由
+          if (formattedRoute?.children?.length === 1 && !formattedRoute?.meta?.title) {
             const childRoute = formattedRoute.children[0]
             formattedRoute.meta = {
               ...formattedRoute.meta,
@@ -100,9 +101,7 @@ export default {
     color: $color-gray;
     /* 菜单图标样式 */
     .menu-icon {
-      flex-shrink: 0;
-      width: 18px;
-      height: 18px;
+      font-size: 18px;
       margin-right: 16px;
       color: $color-gray;
     }
@@ -117,9 +116,7 @@ export default {
 .custom-menu-container {
   /* 菜单图标样式 */
   .menu-icon {
-    flex-shrink: 0;
-    width: 18px;
-    height: 18px;
+    font-size: 18px;
     margin-right: 16px;
     color: $color-gray;
   }
@@ -137,6 +134,8 @@ export default {
   border-right: none;
   :deep {
     .el-menu-item {
+      display: flex;
+      align-items: center;
       padding: 0 18px;
       color: $color-gray;
       background-color: $menuBg;
@@ -154,9 +153,11 @@ export default {
       }
     }
 
-    .el-sub-menu {
+    .el-submenu {
       background-color: $color-dark;
-      .el-sub-menu__title {
+      .el-submenu__title {
+        display: flex;
+        align-items: center;
         padding: 0 18px;
         color: $color-gray;
         &:hover {
@@ -164,6 +165,7 @@ export default {
         }
       }
       .el-submenu__icon-arrow {
+        margin-top: -6px;
         color: #909399;
       }
       .nest-menu.el-menu-item {

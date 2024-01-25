@@ -2,10 +2,7 @@
   <el-breadcrumb class="breadcrumb-container" separator="/">
     <transition-group name="breadcrumb">
       <el-breadcrumb-item v-for="(item, index) in breadcrumbList" :key="item.path">
-        <span v-if="index === breadcrumbList.length - 1">
-          {{ item.meta.title }}
-        </span>
-
+        <span v-if="index === breadcrumbList.length - 1"> {{ item.meta.title }} </span>
         <a v-else @click.prevent="handleLink(item)">{{ item.meta.title }}</a>
       </el-breadcrumb-item>
     </transition-group>
@@ -37,7 +34,7 @@ export default {
       // 如果第一个匹配项不是首页
       if (!this.isDashboard(first)) {
         // 在匹配项数组前添加一个“首页”路由项
-        matched = [{ path: '/home/index', meta: { title: 'route.home' } }].concat(matched)
+        matched = [{ path: '/home/index', meta: { title: '首页' } }].concat(matched)
       }
 
       // 将符合条件的匹配项过滤为只包含元信息、标题的项
@@ -53,6 +50,9 @@ export default {
     handleLink(route) {
       const { redirect, path } = route
       const toLink = redirect || path
+      if (toLink === this.$route.path) {
+        return
+      }
       this.$router.push(toLink)
     }
   }
