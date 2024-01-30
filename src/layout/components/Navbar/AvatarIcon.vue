@@ -10,7 +10,7 @@
         <router-link to="/login">
           <el-dropdown-item>Action 1</el-dropdown-item>
         </router-link>
-        <el-dropdown-item divided @click="logout">退出登录</el-dropdown-item>
+        <el-dropdown-item divided @click.native="logout">退出登录</el-dropdown-item>
       </el-dropdown-menu>
     </template>
   </el-dropdown>
