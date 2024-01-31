@@ -23,8 +23,8 @@
 /* 超出一行省略 */
 @mixin textEllipsis() {
   overflow: hidden;
-  text-overflow: ellipsis;
   white-space: nowrap;
+  text-overflow: ellipsis;
 }
 
 /* 细边框效果 */
@@ -36,12 +36,12 @@
     left: 0;
     width: 200%;
     height: 200%;
-    pointer-events: none;
-    content: '';
     border: 1px solid $color;
     border-radius: inherit;
     transform: scale(0.5);
     transform-origin: 0 0;
+    content: '';
+    pointer-events: none;
   }
 }
 

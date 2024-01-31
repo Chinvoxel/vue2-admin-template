@@ -4,8 +4,8 @@
 *::before,
 *::after {
   box-sizing: border-box;
-  padding: 0;
   margin: 0;
+  padding: 0;
 }
 
 html,
@@ -37,8 +37,8 @@ q {
 
 /* 移除表格间隔 */
 table {
-  border-spacing: 0;
   border-collapse: collapse;
+  border-spacing: 0;
 }
 
 /* 移除文本链接下划线 */
