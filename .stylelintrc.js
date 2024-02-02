@@ -13,7 +13,7 @@ module.exports = {
     // 禁止空块
     'block-no-empty': true,
     // 禁止在覆盖高特异性选择器之后出现低特异性选择器
-    'no-descending-specificity': true,
+    'no-descending-specificity': null,
     // 禁止空源码
     'no-empty-source': null,
     // 禁止字体族中缺少泛型族关键字
