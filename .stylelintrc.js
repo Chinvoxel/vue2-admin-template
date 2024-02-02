@@ -13,13 +13,13 @@ module.exports = {
     // 禁止空块
     'block-no-empty': true,
     // 禁止在覆盖高特异性选择器之后出现低特异性选择器
-    'no-descending-specificity': null,
+    'no-descending-specificity': true,
     // 禁止空源码
     'no-empty-source': null,
     // 禁止字体族中缺少泛型族关键字
     'font-family-no-missing-generic-family-keyword': null,
     // 不允许未知函数
-    'function-no-unknown': null,
+    'function-no-unknown': true,
     // 指定类选择器的模式
     'selector-class-pattern': null,
     // 要求或禁止在规则之前的空行
