@@ -62,9 +62,9 @@ export default {
   .sidebar-title {
     flex-shrink: 0;
     min-width: 126px;
-    font-size: 14px;
-    font-weight: 600;
     color: #ffffff;
+    font-weight: 600;
+    font-size: 14px;
   }
 }
 </style>

@@ -20,7 +20,7 @@
   "css.validate": false,
   "scss.validate": false,
   // stylelint校验的文件类型
-  "stylelint.validate": ["css", "scss", "sass", "postcss", "vue"],
+  "stylelint.validate": ["html", "css", "scss", "sass", "postcss", "vue"],
 
   // 开启自动显示建议
   "editor.quickSuggestions": {

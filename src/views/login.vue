@@ -140,7 +140,6 @@ export default {
 
           .el-input__prefix {
             @include flex(center);
-
             top: 9px;
             width: 23px;
             height: 23px;

@@ -103,8 +103,8 @@ export default {
     /* 菜单图标样式 */
     .menu-icon {
       margin-right: 16px;
-      font-size: 18px;
       color: $color-gray;
+      font-size: 18px;
     }
 
     &.is-active {
@@ -121,8 +121,8 @@ export default {
   /* 菜单图标样式 */
   .menu-icon {
     margin-right: 16px;
-    font-size: 18px;
     color: $color-gray;
+    font-size: 18px;
   }
 
   /* 收缩菜单样式 */

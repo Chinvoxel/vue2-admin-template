@@ -9,6 +9,17 @@ module.exports = {
     "stylelint-config-prettier-scss"
   ],
 
+  overrides: [
+    {
+      files: ['**/*.(scss|css|vue)'],
+      customSyntax: 'postcss-scss',
+    },
+    {
+      files: ['**/*.(html|vue)'],
+      customSyntax: 'postcss-html',
+    },
+  ],
+
   rules: {
     "declaration-empty-line-before": null,
     // 禁止空块
