@@ -1,6 +1,6 @@
 module.exports = {
   root: true,
-  plugins: ['stylelint-order', 'stylelint-scss'],
+  plugins: ['stylelint-scss'],
   extends: [
     'stylelint-config-standard',
     "stylelint-config-recommended-scss",
@@ -10,6 +10,7 @@ module.exports = {
   ],
 
   rules: {
+    "declaration-empty-line-before": null,
     // 禁止空块
     'block-no-empty': true,
     // 禁止在覆盖高特异性选择器之后出现低特异性选择器

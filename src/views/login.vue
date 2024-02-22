@@ -92,7 +92,6 @@ export default {
 <style lang="scss" scoped>
 .login-wrapper {
   @include flex(center);
-
   width: 100vw;
   height: 100vh;
   overflow-y: auto;
@@ -135,7 +134,6 @@ export default {
       :deep {
         .form-input {
           @include autofill(#f5f5f5);
-
           height: 36px;
           background: #f5f5f5;
           border-radius: 6px;

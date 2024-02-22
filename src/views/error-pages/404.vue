@@ -9,12 +9,11 @@
 <style lang="scss" scoped>
 .wrapper {
   @include flexDirection(center);
-
   width: 100vw;
   height: 100vh;
+  color: #ffffff;
   font-size: 70px;
   line-height: 1.3;
-  color: #ffffff;
   background: #111112;
 
   .not-found {
